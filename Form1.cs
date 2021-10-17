@@ -16,5 +16,16 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
+
+        private void 폴더열기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1;
+            string path = 
+        }
+
+        private void 종료XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
