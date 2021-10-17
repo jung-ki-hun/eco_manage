@@ -44,6 +44,7 @@
             this.깃커밋CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용법AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.코드실행VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             // 파일ToolStripMenuItem
             // 
             this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.코드실행VToolStripMenuItem,
             this.폴더열기ToolStripMenuItem,
             this.toolStripMenuItem1,
             this.종료XToolStripMenuItem});
@@ -113,6 +115,7 @@
             this.깃로그ToolStripMenuItem.Name = "깃로그ToolStripMenuItem";
             this.깃로그ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.깃로그ToolStripMenuItem.Text = "깃 로그(&L)";
+            this.깃로그ToolStripMenuItem.Click += new System.EventHandler(this.깃로그ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -156,6 +159,13 @@
             this.사용법AToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.사용법AToolStripMenuItem.Text = "사용법(&A)";
             // 
+            // 코드실행VToolStripMenuItem
+            // 
+            this.코드실행VToolStripMenuItem.Name = "코드실행VToolStripMenuItem";
+            this.코드실행VToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.코드실행VToolStripMenuItem.Text = "코드 실행(&V)";
+            this.코드실행VToolStripMenuItem.Click += new System.EventHandler(this.코드실행VToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -190,6 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem 깃커밋CToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 도움말HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사용법AToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 코드실행VToolStripMenuItem;
     }
 }
 
