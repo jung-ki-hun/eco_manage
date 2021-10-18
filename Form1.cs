@@ -17,6 +17,16 @@ namespace WindowsFormsApp3
         string path = null;
         public Form1()
         {
+            ProcessStartInfo cmd = new ProcessStartInfo();
+            Process process = new Process();
+            cmd.FileName = @"cmd";
+            cmd.WindowStyle = ProcessWindowStyle.Hidden;             // cmd창이 숨겨지도록 하기
+            cmd.CreateNoWindow = true;                               // cmd창을 띄우지 안도록 하기
+
+            cmd.UseShellExecute = false;
+            cmd.RedirectStandardOutput = true;        // cmd창에서 데이터를 가져오기
+            cmd.RedirectStandardInput = true;          // cmd창으로 데이터 보내기
+            cmd.RedirectStandardError = true;        // cmd창에서 오류 내용 가져오기
             InitializeComponent();
         }
 
@@ -47,6 +57,17 @@ namespace WindowsFormsApp3
 
         private void 코드실행VToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProcessStartInfo cmd = new ProcessStartInfo();
+            Process process = new Process();
+            cmd.FileName = @"cmd";
+            cmd.WindowStyle = ProcessWindowStyle.Hidden;             // cmd창이 숨겨지도록 하기
+            cmd.CreateNoWindow = true;                               // cmd창을 띄우지 안도록 하기
+
+            cmd.UseShellExecute = false;
+            cmd.RedirectStandardOutput = true;        // cmd창에서 데이터를 가져오기
+            cmd.RedirectStandardInput = true;          // cmd창으로 데이터 보내기
+            cmd.RedirectStandardError = true;        // cmd창에서 오류 내용 가져오기
+ 
             if (path == null)
             {
                 string command = "code .";
