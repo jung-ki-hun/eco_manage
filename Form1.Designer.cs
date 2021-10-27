@@ -28,24 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.코드실행VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.폴더열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.깃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.깃연동ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.깃푸쉬ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.깃풀ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.깃로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.종료XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.깃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.깃연동ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.깃로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.깃푸쉬ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.깃풀ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.깃커밋CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용법AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.코드실행VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -59,7 +65,7 @@
             this.도움말HToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 233);
+            this.menuStrip1.Size = new System.Drawing.Size(114, 233);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,15 +77,34 @@
             this.toolStripMenuItem1,
             this.종료XToolStripMenuItem});
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
-            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(101, 35);
             this.파일ToolStripMenuItem.Text = "파일(&F)";
+            // 
+            // 코드실행VToolStripMenuItem
+            // 
+            this.코드실행VToolStripMenuItem.Name = "코드실행VToolStripMenuItem";
+            this.코드실행VToolStripMenuItem.Size = new System.Drawing.Size(204, 36);
+            this.코드실행VToolStripMenuItem.Text = "코드 실행(&V)";
+            this.코드실행VToolStripMenuItem.Click += new System.EventHandler(this.코드실행VToolStripMenuItem_Click);
             // 
             // 폴더열기ToolStripMenuItem
             // 
             this.폴더열기ToolStripMenuItem.Name = "폴더열기ToolStripMenuItem";
-            this.폴더열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.폴더열기ToolStripMenuItem.Size = new System.Drawing.Size(204, 36);
             this.폴더열기ToolStripMenuItem.Text = "폴더 열기(&O)";
             this.폴더열기ToolStripMenuItem.Click += new System.EventHandler(this.폴더열기ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(201, 6);
+            // 
+            // 종료XToolStripMenuItem
+            // 
+            this.종료XToolStripMenuItem.Name = "종료XToolStripMenuItem";
+            this.종료XToolStripMenuItem.Size = new System.Drawing.Size(204, 36);
+            this.종료XToolStripMenuItem.Text = "종료(&X)";
+            this.종료XToolStripMenuItem.Click += new System.EventHandler(this.종료XToolStripMenuItem_Click);
             // 
             // 깃ToolStripMenuItem
             // 
@@ -92,60 +117,48 @@
             this.toolStripMenuItem3,
             this.깃커밋CToolStripMenuItem});
             this.깃ToolStripMenuItem.Name = "깃ToolStripMenuItem";
-            this.깃ToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.깃ToolStripMenuItem.Size = new System.Drawing.Size(101, 35);
             this.깃ToolStripMenuItem.Text = "깃(&G)";
             // 
             // 깃연동ToolStripMenuItem
             // 
             this.깃연동ToolStripMenuItem.Name = "깃연동ToolStripMenuItem";
-            this.깃연동ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.깃연동ToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
             this.깃연동ToolStripMenuItem.Text = "깃 연동(&R)";
+            // 
+            // 깃로그ToolStripMenuItem
+            // 
+            this.깃로그ToolStripMenuItem.Name = "깃로그ToolStripMenuItem";
+            this.깃로그ToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
+            this.깃로그ToolStripMenuItem.Text = "깃 로그(&L)";
+            this.깃로그ToolStripMenuItem.Click += new System.EventHandler(this.깃로그ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(188, 6);
             // 
             // 깃푸쉬ToolStripMenuItem
             // 
             this.깃푸쉬ToolStripMenuItem.Name = "깃푸쉬ToolStripMenuItem";
-            this.깃푸쉬ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.깃푸쉬ToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
             this.깃푸쉬ToolStripMenuItem.Text = "깃 푸쉬(&S)";
             // 
             // 깃풀ToolStripMenuItem
             // 
             this.깃풀ToolStripMenuItem.Name = "깃풀ToolStripMenuItem";
-            this.깃풀ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.깃풀ToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
             this.깃풀ToolStripMenuItem.Text = "깃 풀(&U)";
-            // 
-            // 깃로그ToolStripMenuItem
-            // 
-            this.깃로그ToolStripMenuItem.Name = "깃로그ToolStripMenuItem";
-            this.깃로그ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.깃로그ToolStripMenuItem.Text = "깃 로그(&L)";
-            this.깃로그ToolStripMenuItem.Click += new System.EventHandler(this.깃로그ToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // 종료XToolStripMenuItem
-            // 
-            this.종료XToolStripMenuItem.Name = "종료XToolStripMenuItem";
-            this.종료XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.종료XToolStripMenuItem.Text = "종료(&X)";
-            this.종료XToolStripMenuItem.Click += new System.EventHandler(this.종료XToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(188, 6);
             // 
             // 깃커밋CToolStripMenuItem
             // 
             this.깃커밋CToolStripMenuItem.Name = "깃커밋CToolStripMenuItem";
-            this.깃커밋CToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.깃커밋CToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
             this.깃커밋CToolStripMenuItem.Text = "깃 커밋(&C)";
             // 
             // 도움말HToolStripMenuItem
@@ -153,21 +166,39 @@
             this.도움말HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.사용법AToolStripMenuItem});
             this.도움말HToolStripMenuItem.Name = "도움말HToolStripMenuItem";
-            this.도움말HToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.도움말HToolStripMenuItem.Size = new System.Drawing.Size(101, 35);
             this.도움말HToolStripMenuItem.Text = "도움말(&H)";
             // 
             // 사용법AToolStripMenuItem
             // 
             this.사용법AToolStripMenuItem.Name = "사용법AToolStripMenuItem";
-            this.사용법AToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.사용법AToolStripMenuItem.Size = new System.Drawing.Size(182, 36);
             this.사용법AToolStripMenuItem.Text = "사용법(&A)";
             // 
-            // 코드실행VToolStripMenuItem
+            // chart1
             // 
-            this.코드실행VToolStripMenuItem.Name = "코드실행VToolStripMenuItem";
-            this.코드실행VToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.코드실행VToolStripMenuItem.Text = "코드 실행(&V)";
-            this.코드실행VToolStripMenuItem.Click += new System.EventHandler(this.코드실행VToolStripMenuItem_Click);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(130, 95);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(274, 113);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(140, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // Form1
             // 
@@ -175,12 +206,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(416, 233);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "eco";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +240,8 @@
         private System.Windows.Forms.ToolStripMenuItem 도움말HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사용법AToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 코드실행VToolStripMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
