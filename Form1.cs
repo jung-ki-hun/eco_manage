@@ -52,7 +52,7 @@ namespace WindowsFormsApp3
 
         private void 깃로그ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string gitLog ='';
+            string gitLog ="";
             Form2 gitlog = new Form2(gitLog);
             //Form2
         }
