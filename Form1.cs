@@ -14,7 +14,7 @@ namespace WindowsFormsApp3
 {
     public partial class Form1 : Form
     {
-        string path = null;
+        string path = null;        
         public Form1()
         {
             ProcessStartInfo cmd = new ProcessStartInfo();
@@ -52,7 +52,8 @@ namespace WindowsFormsApp3
 
         private void 깃로그ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 gitlog = new Form2();
+            string gitLog;
+            Form2 gitlog = new Form2(gitLog);
             //Form2
         }
 

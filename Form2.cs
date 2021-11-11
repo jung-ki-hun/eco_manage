@@ -12,9 +12,10 @@ namespace WindowsFormsApp3
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(string gitLog)
         {
             InitializeComponent();
+            textBox1.Text = gitLog;
         }
 
         private void button1_Click(object sender, EventArgs e)
