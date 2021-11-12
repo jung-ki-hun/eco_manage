@@ -16,7 +16,7 @@ namespace WindowsFormsApp3
     {
         string path = null;
         string gitLog = "";//전역변수로 설정하여 프로그램 전역에서 활용가능하도록 지정
-        string resultstate = "";
+        string resultstate, resultValue = "";
         public Form1()
         {
             ProcessStartInfo cmd = new ProcessStartInfo();
@@ -56,18 +56,19 @@ namespace WindowsFormsApp3
             pro.Start();
             //명령어 실행
 
-            pro.StandardInput.Write(@command+ Environment.NewLine);
+            pro.StandardInput.Write(@"git"+command+ Environment.NewLine);
             pro.StandardInput.Close();
             switch (otion)
             {
                 case 0: //log
-                    string resultValue = pro.StandardOutput.ReadToEnd();
+                    resultValue = pro.StandardOutput.ReadToEnd();
                     break;
                 case 1://commit
-                    string resultstate = pro.StandardOutput.ReadToEnd();
+                    resultstate = pro.StandardOutput.ReadToEnd();
                     break;
-
-
+                case 2://add
+                    resultstate = "success add";
+                    break;
             }
             pro.WaitForExit();
             pro.Close();            
